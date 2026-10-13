@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart & Checkout | Blinkit</title>
+    <meta name="description" content="View your cart and get instant 10-minute grocery delivery from Blinkit.">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="page-wrapper">
+
+    <!-- Cart Page Header -->
+    <header class="cart-page-header">
+        <div class="cart-header-inner">
+            <div class="cart-header-left">
+                <a href="index.html" class="logo">blink<span>it</span></a>
+                <a href="index.html" class="back-link">
+                    <span>←</span> Continue Shopping
+                </a>
+            </div>
+
+            <div class="cart-header-right">
+                <a href="login.html" class="login" id="headerLoginBtn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Cart Content -->
+    <main class="cart-page-container">
+
+        <!-- Full Cart Layout -->
+        <div class="cart-layout" id="cartFullLayout">
+
+            <!-- Left Column: Items & Delivery -->
+            <div class="cart-main-col">
+
+                <!-- 10 Minute Delivery Guarantee Banner -->
+                <div class="delivery-eta-card">
+                    <div class="eta-left">
+                        <div class="eta-bike">🛵</div>
+                        <div class="eta-text">
+                            <h2>Delivery in 10 minutes</h2>
+                            <p>Superfast delivery directly to your doorstep</p>
+                        </div>
+                    </div>
+                    <span class="eta-badge">⚡ Instant Delivery</span>
+                </div>
+
+                <!-- Free Delivery Meter -->
+                <div class="free-del-meter" id="freeDelMeter">
+                    <div class="meter-header" style="color: var(--green);">
+                        <span>🎉 Yay! You have unlocked <strong>FREE Delivery</strong></span>
+                        <span>₹0</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <!-- Cart Items Card -->
+                <div class="cart-card cart-items-card">
+                    <div class="cart-card-title">
+                        <h3>Cart Items</h3>
+                        <span id="cartItemsCount">3 items</span>
+                    </div>
+
+                    <!-- Items List Container -->
+                    <div id="cartItemsList">
+
+                        <!-- Item 1: Milk -->
+                        <div class="cart-item-row">
+                            <div class="item-pic bg-blue">🥛</div>
+                            <div class="item-info">
+                                <h4 class="item-name">Amul Taaza Toned Milk</h4>
+                                <p class="item-unit">500 ml</p>
+                                <p class="item-price-unit">
+                                    <strong>₹27</strong>
+                                    <del>₹30</del>
+                                </p>
+                            </div>
+                            <div class="item-actions">
+                                <div class="qty-stepper">
+                                    <span class="qty-btn">−</span>
+                                    <span class="qty-count">2</span>
+                                    <span class="qty-btn">+</span>
+                                </div>
+                                <div class="item-total-price">₹54</div>
+                                <a href="#item-removed" class="item-remove-btn" title="Remove item">✕</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Apples -->
+                        <div class="cart-item-row">
+                            <div class="item-pic bg-green">🍎</div>
+                            <div class="item-info">
+                                <h4 class="item-name">Fresh Red Apples</h4>
+                                <p class="item-unit">4 pieces</p>
+                                <p class="item-price-unit">
+                                    <strong>₹99</strong>
+                                    <del>₹120</del>
+                                </p>
+                            </div>
+                            <div class="item-actions">
+                                <div class="qty-stepper">
+                                    <span class="qty-btn">−</span>
+                                    <span class="qty-count">1</span>
+                                    <span class="qty-btn">+</span>
+                                </div>
+                                <div class="item-total-price">₹99</div>
+                                <a href="#item-removed" class="item-remove-btn" title="Remove item">✕</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Bread -->
+                        <div class="cart-item-row">
+                            <div class="item-pic bg-blue">🍞</div>
+                            <div class="item-info">
+                                <h4 class="item-name">Harvest Gold White Bread</h4>
+                                <p class="item-unit">400 g</p>
+                                <p class="item-price-unit">
+                                    <strong>₹45</strong>
+                                    <del>₹50</del>
+                                </p>
+                            </div>
+                            <div class="item-actions">
+                                <div class="qty-stepper">
+                                    <span class="qty-btn">−</span>
+                                    <span class="qty-count">1</span>
+                                    <span class="qty-btn">+</span>
+                                </div>
+                                <div class="item-total-price">₹45</div>
+                                <a href="#item-removed" class="item-remove-btn" title="Remove item">✕</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Missed Something / Recommendations -->
+                <section class="recommendations-section">
+                    <h4 class="rec-title">✨ Before you checkout (Recommended)</h4>
+                    <div class="rec-grid" id="recommendationsGrid">
+
+                        <div class="rec-card">
+                            <div>
+                                <div class="rec-emoji bg-blue">🧈</div>
+                                <h5 class="rec-name">Amul Salted Butter</h5>
+                                <p class="rec-unit">100 g</p>
+                            </div>
+                            <div class="rec-bottom">
+                                <span class="rec-price">₹58</span>
+                                <a href="#added" class="add-btn">ADD +</a>
+                            </div>
+                        </div>
+
+                        <div class="rec-card">
+                            <div>
+                                <div class="rec-emoji bg-green">🍅</div>
+                                <h5 class="rec-name">Fresh Hybrid Tomatoes</h5>
+                                <p class="rec-unit">500 g</p>
+                            </div>
+                            <div class="rec-bottom">
+                                <span class="rec-price">₹24</span>
+                                <a href="#added" class="add-btn">ADD +</a>
+                            </div>
+                        </div>
+
+                        <div class="rec-card">
+                            <div>
+                                <div class="rec-emoji bg-pink">🍪</div>
+                                <h5 class="rec-name">Chocolate Cookies</h5>
+                                <p class="rec-unit">120 g</p>
+                            </div>
+                            <div class="rec-bottom">
+                                <span class="rec-price">₹35</span>
+                                <a href="#added" class="add-btn">ADD +</a>
+                            </div>
+                        </div>
+
+                        <div class="rec-card">
+                            <div>
+                                <div class="rec-emoji bg-orange">🥤</div>
+                                <h5 class="rec-name">Chilled Cola Can</h5>
+                                <p class="rec-unit">300 ml</p>
+                            </div>
+                            <div class="rec-bottom">
+                                <span class="rec-price">₹40</span>
+                                <a href="#added" class="add-btn">ADD +</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Delivery Instructions (Pure CSS Selectable Chips) -->
+                <div class="cart-card instructions-card" style="margin-top: 24px;">
+                    <h4>Delivery Instructions</h4>
+                    <div class="instructions-chips">
+                        <input type="checkbox" id="inst-door" class="inst-check" checked>
+                        <label for="inst-door" class="inst-chip">🚪 Leave at door</label>
+
+                        <input type="checkbox" id="inst-quiet" class="inst-check">
+                        <label for="inst-quiet" class="inst-chip">🔕 Avoid calling</label>
+
+                        <input type="checkbox" id="inst-bell" class="inst-check">
+                        <label for="inst-bell" class="inst-chip">🛡️ Don't ring bell</label>
+
+                        <input type="checkbox" id="inst-call" class="inst-check">
+                        <label for="inst-call" class="inst-chip">📞 Call on arrival</label>
+
+                        <input type="checkbox" id="inst-guard" class="inst-check">
+                        <label for="inst-guard" class="inst-chip">📦 Leave with guard</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Promo, Bill Details & Checkout -->
+            <div class="cart-side-col">
+
+                <!-- Delivery Address Card -->
+                <div class="address-card">
+                    <div class="address-card-info">
+                        <span class="addr-icon">📍</span>
+                        <div class="addr-text">
+                            <h4>Delivering to</h4>
+                            <p id="currentDeliveryAddress">Flat 402, Royal Palms, Raj Nagar Extension, Ghaziabad</p>
+                        </div>
+                    </div>
+                    <a href="login.html#addresses" class="change-addr-btn">Change</a>
+                </div>
+
+                <!-- Promo Code Card -->
+                <div class="promo-card">
+                    <h4 class="promo-title">🏷️ Apply Coupon</h4>
+                    <form class="promo-form" action="#coupon-applied">
+                        <input type="text" class="promo-input" id="promoCodeInput" placeholder="Enter coupon code" value="BLINKIT50">
+                        <button type="submit" class="promo-apply-btn">Apply</button>
+                    </form>
+
+                    <!-- Clickable Quick Promo Badges -->
+                    <div class="promo-tags">
+                        <a href="#coupon-applied" class="promo-tag">BLINKIT50 (₹50 OFF)</a>
+                        <a href="#coupon-applied" class="promo-tag">WELCOME20 (20% OFF)</a>
+                        <a href="#coupon-applied" class="promo-tag">FREEDEL</a>
+                    </div>
+
+                    <!-- Applied Coupon Banner (Pure CSS :target) -->
+                    <div class="applied-promo-banner" id="coupon-applied" style="display: none;">
+                        <span>🏷️ Coupon <strong>BLINKIT50</strong> applied! (-₹50)</span>
+                        <a href="#" class="remove-promo-btn">Remove</a>
+                    </div>
+                </div>
+
+                <!-- Bill Details Card -->
+                <div class="bill-card">
+                    <h3 class="bill-card-title">Bill Details</h3>
+
+                    <div class="bill-row">
+                        <span>Items Total</span>
+                        <strong>₹198</strong>
+                    </div>
+
+                    <div class="bill-row savings-row">
+                        <span>Product Discount</span>
+                        <strong>-₹35</strong>
+                    </div>
+
+                    <div class="bill-row">
+                        <span>Delivery Fee</span>
+                        <strong style="color: var(--green);">FREE</strong>
+                    </div>
+
+                    <div class="bill-row">
+                        <span>Handling Fee</span>
+                        <strong>₹4</strong>
+                    </div>
+
+                    <div class="bill-row discount-row">
+                        <span>Coupon Discount</span>
+                        <strong>-₹50</strong>
+                    </div>
+
+                    <!-- Pure CSS Tip Selector -->
+                    <div class="tip-section">
+                        <div class="tip-title">
+                            <span>Tip your delivery partner</span>
+                            <small style="color:#718096; font-size:11px;">100% goes to rider</small>
+                        </div>
+                        <div class="tip-chips">
+                            <input type="radio" name="tip" id="tip-none" class="tip-radio">
+
+                            <input type="radio" name="tip" id="tip-10" class="tip-radio">
+                            <label for="tip-10" class="tip-chip">₹10</label>
+
+                            <input type="radio" name="tip" id="tip-20" class="tip-radio" checked>
+                            <label for="tip-20" class="tip-chip">₹20</label>
+
+                            <input type="radio" name="tip" id="tip-30" class="tip-radio">
+                            <label for="tip-30" class="tip-chip">₹30</label>
+
+                            <input type="radio" name="tip" id="tip-50" class="tip-radio">
+                            <label for="tip-50" class="tip-chip">₹50</label>
+                        </div>
+                    </div>
+
+                    <div class="bill-divider"></div>
+
+                    <div class="bill-total-row">
+                        <span>To Pay</span>
+                        <strong class="bill-total-amount">₹137</strong>
+                    </div>
+
+                    <!-- Savings Banner -->
+                    <div class="savings-banner">
+                        🎉 You are saving ₹85 on this order!
+                    </div>
+
+                    <!-- Proceed to Pay CTA (Opens Pure CSS :target Modal) -->
+                    <div class="checkout-cta-box">
+                        <a href="#checkout-modal" class="pay-btn" style="text-decoration:none;">
+                            <span class="pay-btn-label">
+                                <span>🔒 Proceed to Pay</span>
+                            </span>
+                            <span class="pay-btn-amount">₹137</span>
+                        </a>
+                    </div>
+
+                    <p class="safety-note">
+                        🛡️ 100% Safe and Secure Payments. Free cancellations before packing begins.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Pure CSS Checkout & Payment Modal (:target) -->
+    <div class="modal-backdrop" id="checkout-modal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Select Payment Method</h3>
+                <a href="#" class="modal-close-btn" aria-label="Close modal">✕</a>
+            </div>
+            <div class="modal-body">
+                <div class="payment-methods-list">
+
+                    <label class="payment-option-card selected">
+                        <div class="pay-opt-left">
+                            <span class="pay-opt-icon">⚡</span>
+                            <div>
+                                <div class="pay-opt-title">UPI (Google Pay, PhonePe, Paytm)</div>
+                                <div class="pay-opt-subtitle">Fastest & recommended</div>
+                            </div>
+                        </div>
+                        <input type="radio" name="paymentMethod" value="UPI" class="pay-radio" checked>
+                    </label>
+
+                    <label class="payment-option-card">
+                        <div class="pay-opt-left">
+                            <span class="pay-opt-icon">💳</span>
+                            <div>
+                                <div class="pay-opt-title">Credit or Debit Card</div>
+                                <div class="pay-opt-subtitle">Visa, Mastercard, RuPay, Amex</div>
+                            </div>
+                        </div>
+                        <input type="radio" name="paymentMethod" value="Card" class="pay-radio">
+                    </label>
+
+                    <label class="payment-option-card">
+                        <div class="pay-opt-left">
+                            <span class="pay-opt-icon">🏦</span>
+                            <div>
+                                <div class="pay-opt-title">Net Banking</div>
+                                <div class="pay-opt-subtitle">All major Indian banks supported</div>
+                            </div>
+                        </div>
+                        <input type="radio" name="paymentMethod" value="NetBanking" class="pay-radio">
+                    </label>
+
+                    <label class="payment-option-card">
+                        <div class="pay-opt-left">
+                            <span class="pay-opt-icon">💵</span>
+                            <div>
+                                <div class="pay-opt-title">Cash on Delivery (COD)</div>
+                                <div class="pay-opt-subtitle">Pay with cash or UPI on delivery</div>
+                            </div>
+                        </div>
+                        <input type="radio" name="paymentMethod" value="COD" class="pay-radio">
+                    </label>
+
+                </div>
+
+                <!-- Pure CSS Action: Links directly to Order Success Modal -->
+                <a href="#order-success" class="auth-primary-btn" style="display:block; text-align:center; text-decoration:none;">
+                    Pay ₹137 & Place Order →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pure CSS Order Success Celebration Modal (:target) -->
+    <div class="modal-backdrop" id="order-success">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Order Status</h3>
+                <a href="#" class="modal-close-btn" aria-label="Close modal">✕</a>
+            </div>
+            <div class="modal-body">
+                <div class="success-card-content">
+                    <div class="confetti-art">🎉</div>
+                    <h2>Order Placed!</h2>
+                    <p>Your order <strong>#BLNK-98421</strong> has been confirmed.</p>
+
+                    <!-- Live Tracker Box -->
+                    <div class="live-tracker-box">
+                        <div class="tracker-status-line">
+                            <div>
+                                <h4 style="font-size:14px; font-weight:800; color:#1a202c;">Arriving in 10 minutes</h4>
+                                <p style="font-size:12px; color:#718096;">Flat 402, Royal Palms, Raj Nagar Extension, Ghaziabad</p>
+                            </div>
+                            <span class="timer-chip">ETA: 09:59</span>
+                        </div>
+
+                        <!-- Progress Step Nodes -->
+                        <div class="delivery-steps">
+                            <div class="step-node done">
+                                <div class="step-dot">✓</div>
+                                <span>Placed</span>
+                            </div>
+                            <div class="step-node done">
+                                <div class="step-dot">✓</div>
+                                <span>Packed</span>
+                            </div>
+                            <div class="step-node done">
+                                <div class="step-dot">🛵</div>
+                                <span>On the way</span>
+                            </div>
+                            <div class="step-node">
+                                <div class="step-dot">🏠</div>
+                                <span>Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; gap:10px; margin-top:20px;">
+                        <a href="login.html#profile" class="auth-primary-btn" style="text-decoration:none; text-align:center;">View in My Orders</a>
+                        <a href="index.html" class="start-shopping-btn" style="flex:1; background:#f1f4f8; color:#1a202c; box-shadow:none; text-align:center;">Shop More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

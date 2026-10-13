@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkit | 10 Minute Grocery Delivery</title>
+    <meta name="description" content="Shop daily groceries, fresh fruits, vegetables, dairy, snacks, and essentials delivered to your doorstep in 10 minutes.">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">blink<span>it</span></a>
+
+        <div class="delivery" title="Delivery location">
+            <h3>Delivery in 10 minutes</h3>
+            <p>Ghaziabad, Uttar Pradesh ▼</p>
+        </div>
+
+        <form class="search" action="#products">
+            <span>🔍</span>
+            <input type="search" placeholder="Search for atta, dal, milk, chips, cookies..." aria-label="Search products">
+        </form>
+
+        <a href="login.html" class="login" id="headerLoginBtn">Login</a>
+        <a href="cart.html" class="cart" id="headerCartBtn">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-text">My Cart</span>
+            <span class="cart-badge">3</span>
+        </a>
+    </header>
+
+    <!-- Categories Strip -->
+    <nav class="categories">
+        <a href="#fruits">Fruits & Vegetables</a>
+        <a href="#dairy">Dairy & Breakfast</a>
+        <a href="#snacks">Snacks & Munchies</a>
+        <a href="#drinks">Cold Drinks & Juices</a>
+        <a href="#staples">Atta, Rice & Dal</a>
+        <a href="#personal">Personal Care</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR DAILY ESSENTIALS</p>
+                <h1>Groceries delivered<br>at your doorstep.</h1>
+                <p>Fresh picks. Great prices. Everyday convenience in 10 minutes.</p>
+                <a href="#products" class="shop-btn">Shop Now →</a>
+            </div>
+
+            <div class="hero-art" aria-label="Grocery basket illustration">
+                <span class="fruit fruit-one">🍎</span>
+                <span class="fruit fruit-two">🥑</span>
+                <span class="fruit fruit-three">🥕</span>
+                <span class="fruit fruit-four">🥛</span>
+                <div class="basket">🛍️</div>
+                <span class="sparkle">✦</span>
+            </div>
+
+            <div class="hero-label">
+                <strong>QUICK</strong>
+                <strong>FRESH</strong>
+                <strong>EASY</strong>
+            </div>
+        </section>
+
+        <!-- Category Grid -->
+        <section class="section">
+            <div class="section-heading">
+                <h2>Shop by category</h2>
+                <a href="#products">View all →</a>
+            </div>
+
+            <div class="category-grid">
+                <a href="#fruits" class="category-card">
+                    <div class="category-image bg-green">🥦</div>
+                    <h3>Fruits & Vegetables</h3>
+                </a>
+
+                <a href="#dairy" class="category-card">
+                    <div class="category-image bg-blue">🥛</div>
+                    <h3>Dairy & Breakfast</h3>
+                </a>
+
+                <a href="#snacks" class="category-card">
+                    <div class="category-image bg-pink">🍿</div>
+                    <h3>Snacks & Munchies</h3>
+                </a>
+
+                <a href="#drinks" class="category-card">
+                    <div class="category-image bg-orange">🥤</div>
+                    <h3>Cold Drinks</h3>
+                </a>
+
+                <a href="#staples" class="category-card">
+                    <div class="category-image bg-yellow">🌾</div>
+                    <h3>Atta, Rice & Dal</h3>
+                </a>
+
+                <a href="#personal" class="category-card">
+                    <div class="category-image bg-purple">🧴</div>
+                    <h3>Personal Care</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Promotional Offer Strip -->
+        <section class="offer-strip">
+            <div>
+                <span class="offer-tag">SPECIAL OFFER</span>
+                <h2>Fresh deals, happier meals!</h2>
+                <p>Get up to 30% OFF on daily grocery essentials.</p>
+            </div>
+            <div class="offer-emoji">🥑 🥛 🍞</div>
+        </section>
+
+        <!-- Daily Essentials Product Catalog -->
+        <section class="section" id="products">
+            <div class="section-heading">
+                <h2>Daily essentials</h2>
+                <a href="#products">See all items (12) →</a>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- 1. Dairy Milk -->
+                <article class="product-card" id="dairy">
+                    <div class="product-image bg-blue">
+                        <span class="discount">10% OFF</span>
+                        🥛
+                    </div>
+                    <h3 class="product-name">Amul Taaza Toned Milk</h3>
+                    <p class="quantity">500 ml</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹27</strong>
+                            <del>₹30</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. Apples -->
+                <article class="product-card" id="fruits">
+                    <div class="product-image bg-green">
+                        <span class="discount">18% OFF</span>
+                        🍎
+                    </div>
+                    <h3 class="product-name">Fresh Red Apples</h3>
+                    <p class="quantity">4 pieces</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹99</strong>
+                            <del>₹120</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. Cookies -->
+                <article class="product-card" id="snacks">
+                    <div class="product-image bg-pink">
+                        <span class="discount">12% OFF</span>
+                        🍪
+                    </div>
+                    <h3 class="product-name">Chocolate Cookies</h3>
+                    <p class="quantity">120 g</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹35</strong>
+                            <del>₹40</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. Mixed Fruit Juice -->
+                <article class="product-card" id="drinks">
+                    <div class="product-image bg-orange">
+                        <span class="discount">15% OFF</span>
+                        🧃
+                    </div>
+                    <h3 class="product-name">Mixed Fruit Juice</h3>
+                    <p class="quantity">1 litre</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹85</strong>
+                            <del>₹100</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. Atta -->
+                <article class="product-card" id="staples">
+                    <div class="product-image bg-yellow">
+                        <span class="discount">10% OFF</span>
+                        🌾
+                    </div>
+                    <h3 class="product-name">Whole Wheat Atta</h3>
+                    <p class="quantity">5 kg</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹225</strong>
+                            <del>₹250</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. Shampoo -->
+                <article class="product-card" id="personal">
+                    <div class="product-image bg-purple">
+                        <span class="discount">17% OFF</span>
+                        🧴
+                    </div>
+                    <h3 class="product-name">Daily Care Shampoo</h3>
+                    <p class="quantity">180 ml</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹149</strong>
+                            <del>₹180</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. White Bread -->
+                <article class="product-card">
+                    <div class="product-image bg-blue">
+                        <span class="discount">10% OFF</span>
+                        🍞
+                    </div>
+                    <h3 class="product-name">Harvest Gold White Bread</h3>
+                    <p class="quantity">400 g</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹45</strong>
+                            <del>₹50</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. Butter -->
+                <article class="product-card">
+                    <div class="product-image bg-blue">
+                        <span class="discount">6% OFF</span>
+                        🧈
+                    </div>
+                    <h3 class="product-name">Amul Salted Butter</h3>
+                    <p class="quantity">100 g</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹58</strong>
+                            <del>₹62</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 9. Tomatoes -->
+                <article class="product-card">
+                    <div class="product-image bg-green">
+                        <span class="discount">31% OFF</span>
+                        🍅
+                    </div>
+                    <h3 class="product-name">Fresh Hybrid Tomatoes</h3>
+                    <p class="quantity">500 g</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹24</strong>
+                            <del>₹35</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 10. Potato Chips -->
+                <article class="product-card">
+                    <div class="product-image bg-pink">
+                        <span class="discount">POPULAR</span>
+                        🥔
+                    </div>
+                    <h3 class="product-name">Classic Salted Potato Chips</h3>
+                    <p class="quantity">52 g</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹20</strong>
+                            <del>₹20</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 11. Chilled Cola Can -->
+                <article class="product-card">
+                    <div class="product-image bg-orange">
+                        <span class="discount">11% OFF</span>
+                        🥤
+                    </div>
+                    <h3 class="product-name">Chilled Cola Can</h3>
+                    <p class="quantity">300 ml</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹40</strong>
+                            <del>₹45</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 12. Sunflower Oil -->
+                <article class="product-card">
+                    <div class="product-image bg-yellow">
+                        <span class="discount">15% OFF</span>
+                        🌻
+                    </div>
+                    <h3 class="product-name">Fortune Sunflower Oil</h3>
+                    <p class="quantity">1 litre</p>
+                    <div class="product-bottom">
+                        <div>
+                            <strong>₹135</strong>
+                            <del>₹160</del>
+                        </div>
+                        <div class="add-btn-container">
+                            <a href="cart.html" class="add-btn">ADD +</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Bottom Banner -->
+        <section class="bottom-banner">
+            <div>
+                <h2>Everything you need,<br>all in 10 minutes.</h2>
+                <p>From fresh fruits and milk to everyday essentials.</p>
+            </div>
+            <div class="bottom-art">🛒 🥦 🍊</div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="index.html" class="logo">blink<span>it</span></a>
+        <p>India's last minute app. Fast, fresh, and reliable delivery.</p>
+        <p class="copyright">
+            © 2026 Blinkit Clone Demo. Built for high performance and seamless grocery shopping.
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Account | Blinkit</title>
+    <meta name="description" content="Log in to your Blinkit account to manage orders, addresses, and instant 10-minute grocery delivery.">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="page-wrapper">
+
+    <!-- Header -->
+    <header class="cart-page-header">
+        <div class="cart-header-inner">
+            <div class="cart-header-left">
+                <a href="index.html" class="logo">blink<span>it</span></a>
+                <a href="index.html" class="back-link">
+                    <span>←</span> Back to Store
+                </a>
+            </div>
+
+            <div class="cart-header-right">
+                <a href="cart.html" class="cart" id="headerCartBtn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-text">My Cart (3)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pure CSS View Control Radios (No JS Required) -->
+    <input type="radio" name="auth-mode" id="auth-phone-mode" class="auth-mode-radio" checked>
+    <input type="radio" name="auth-mode" id="auth-otp-mode" class="auth-mode-radio">
+    <input type="radio" name="auth-mode" id="auth-profile-mode" class="auth-mode-radio">
+
+    <!-- Main Content Area -->
+    <main class="auth-wrapper">
+
+        <!-- VIEW 1: Phone Login View (Default) -->
+        <div class="auth-card auth-view-panel" id="phone-view-box">
+            <!-- Hero Top Banner -->
+            <div class="auth-hero-banner">
+                <a href="index.html" class="logo">blink<span>it</span></a>
+                <p class="auth-tagline">India's last minute app</p>
+                <div class="auth-features-pills">
+                    <span class="auth-pill">⚡ 10 Min Delivery</span>
+                    <span class="auth-pill">🥦 5000+ Items</span>
+                    <span class="auth-pill">🛡️ Best Prices</span>
+                </div>
+            </div>
+
+            <div class="auth-card-body">
+                <h3 class="auth-step-title">Log in or Sign up</h3>
+                <p class="auth-step-sub">Enter your phone number to receive an instant OTP.</p>
+
+                <form action="#otp-view-box">
+                    <div class="phone-field-group">
+                        <div class="phone-prefix">
+                            <span>🇮🇳</span>
+                            <span>+91</span>
+                        </div>
+                        <input type="tel" id="phoneInput" class="phone-input" placeholder="Enter 10-digit mobile" maxlength="10" value="9876543210" required>
+                    </div>
+
+                    <div class="demo-fill-card" style="margin-bottom: 16px;">
+                        <span>💡 Demo Mobile: <strong>9876543210</strong></span>
+                        <span style="font-size: 11px; color: #276749; font-weight: 700;">Pre-filled</span>
+                    </div>
+
+                    <!-- Pure CSS Switch to OTP Step -->
+                    <label for="auth-otp-mode" class="auth-primary-btn" style="display:block; text-align:center; cursor:pointer;">
+                        Continue →
+                    </label>
+                </form>
+
+                <p style="font-size: 11px; color: #718096; text-align: center; margin-top: 18px; line-height: 1.4;">
+                    By continuing, you agree to our Terms of Service & Privacy Policy.
+                </p>
+            </div>
+        </div>
+
+        <!-- VIEW 2: OTP Verification View -->
+        <div class="auth-card auth-view-panel" id="otp-view-box">
+            <!-- Hero Top Banner -->
+            <div class="auth-hero-banner">
+                <a href="index.html" class="logo">blink<span>it</span></a>
+                <p class="auth-tagline">Verification Code</p>
+                <div class="auth-features-pills">
+                    <span class="auth-pill">⚡ Instant OTP</span>
+                    <span class="auth-pill">🔒 Secure Login</span>
+                </div>
+            </div>
+
+            <div class="auth-card-body">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <h3 class="auth-step-title">Enter OTP</h3>
+                    <label for="auth-phone-mode" style="color:var(--green); font-size:12px; font-weight:700; cursor:pointer;">Edit Phone</label>
+                </div>
+                <p class="auth-step-sub">We sent a 4-digit code to <strong>+91 9876543210</strong></p>
+
+                <form action="#profile-view-box">
+                    <!-- 4 Digit Boxes pre-filled with demo OTP 1234 -->
+                    <div class="otp-boxes-group">
+                        <input type="text" class="otp-digit" maxlength="1" value="1" readonly>
+                        <input type="text" class="otp-digit" maxlength="1" value="2" readonly>
+                        <input type="text" class="otp-digit" maxlength="1" value="3" readonly>
+                        <input type="text" class="otp-digit" maxlength="1" value="4" readonly>
+                    </div>
+
+                    <div class="demo-fill-card">
+                        <span>⚡ Demo OTP: <strong>1234</strong></span>
+                        <span style="font-size: 11px; color: #276749; font-weight: 700;">Verified Code</span>
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-size:12px; font-weight:700; color:#4a5568; display:block; margin-bottom:6px;">Name</label>
+                        <input type="text" value="Shivansh" style="width:100%; border:1px solid #e2e8f0; border-radius:10px; padding:12px; font-size:14px; outline:none;" readonly>
+                    </div>
+
+                    <!-- Pure CSS Switch to Profile Dashboard -->
+                    <label for="auth-profile-mode" class="auth-primary-btn" style="display:block; text-align:center; cursor:pointer;">
+                        Verify & Continue →
+                    </label>
+
+                    <div class="resend-box">
+                        <span>Resend code in </span>
+                        <span style="color: var(--green); font-weight: 800;">(0s) Resend OTP</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- VIEW 3: Logged In User Dashboard -->
+        <div class="profile-dashboard auth-view-panel" id="profile-view-box">
+
+            <!-- User Info Banner Card -->
+            <div class="profile-banner-card">
+                <div class="profile-user-info">
+                    <div class="profile-avatar-large">S</div>
+                    <div class="profile-meta">
+                        <h2>Shivansh</h2>
+                        <p>+91 98765 43210</p>
+                        <span class="member-tag">★ Blinkit Gold Member</span>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <a href="index.html#products" class="auth-primary-btn" style="text-decoration:none; padding:10px 20px; font-size:13px; font-weight:700;">Start Shopping →</a>
+                    <!-- Pure CSS Logout: Switches back to Phone Login -->
+                    <label for="auth-phone-mode" class="logout-btn" style="cursor:pointer; display:inline-block;">Log Out</label>
+                </div>
+            </div>
+
+            <!-- Profile Nav Tabs (Pure CSS Radios) -->
+            <input type="radio" name="profile-tab" id="tab-orders-radio" class="tab-radio" checked>
+            <input type="radio" name="profile-tab" id="tab-addr-radio" class="tab-radio">
+
+            <div class="profile-tabs-nav">
+                <label for="tab-orders-radio" class="tab-btn" style="cursor:pointer;">📦 My Orders (2)</label>
+                <label for="tab-addr-radio" class="tab-btn" style="cursor:pointer;">📍 Saved Addresses (2)</label>
+            </div>
+
+            <!-- Tab Content: Orders -->
+            <div id="ordersTabContent" class="profile-tab-content" style="display:block;">
+
+                <!-- Order 1: Recent -->
+                <div class="order-card">
+                    <div class="order-card-header">
+                        <div class="order-id-group">
+                            <h4>#BLNK-98421</h4>
+                            <span class="order-date">Today, 10:15 AM</span>
+                        </div>
+                        <span class="order-status-pill">
+                            ✓ Delivered
+                        </span>
+                    </div>
+
+                    <div class="order-items-preview">
+                        <div class="order-item-badge">
+                            <span>🥛</span>
+                            <span>Amul Taaza Milk (2x)</span>
+                        </div>
+                        <div class="order-item-badge">
+                            <span>🍞</span>
+                            <span>Harvest Gold Bread (1x)</span>
+                        </div>
+                    </div>
+
+                    <div class="order-card-footer">
+                        <div>
+                            <span style="font-size:12px; color:#718096;">Total Paid: </span>
+                            <strong class="order-footer-total">₹99</strong>
+                        </div>
+                        <a href="cart.html" class="reorder-btn" style="text-decoration:none;">
+                            🔄 Reorder Items
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Order 2: Yesterday -->
+                <div class="order-card">
+                    <div class="order-card-header">
+                        <div class="order-id-group">
+                            <h4>#BLNK-84291</h4>
+                            <span class="order-date">Yesterday, 6:40 PM</span>
+                        </div>
+                        <span class="order-status-pill">
+                            ✓ Delivered
+                        </span>
+                    </div>
+
+                    <div class="order-items-preview">
+                        <div class="order-item-badge">
+                            <span>🍎</span>
+                            <span>Fresh Red Apples (1x)</span>
+                        </div>
+                        <div class="order-item-badge">
+                            <span>🍪</span>
+                            <span>Chocolate Cookies (1x)</span>
+                        </div>
+                        <div class="order-item-badge">
+                            <span>🧃</span>
+                            <span>Mixed Fruit Juice (1x)</span>
+                        </div>
+                    </div>
+
+                    <div class="order-card-footer">
+                        <div>
+                            <span style="font-size:12px; color:#718096;">Total Paid: </span>
+                            <strong class="order-footer-total">₹219</strong>
+                        </div>
+                        <a href="cart.html" class="reorder-btn" style="text-decoration:none;">
+                            🔄 Reorder Items
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tab Content: Addresses -->
+            <div id="addressesTabContent" class="profile-tab-content">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                    <h3 style="font-size:16px; font-weight:800;">Your Delivery Addresses</h3>
+                </div>
+                <div class="address-grid">
+                    <div class="address-box is-default">
+                        <span class="address-tag">Home • Default</span>
+                        <p>Flat 402, Royal Palms, Raj Nagar Extension, Ghaziabad, UP - 201017</p>
+                    </div>
+                    <div class="address-box">
+                        <span class="address-tag">Work</span>
+                        <p>Tower B, 5th Floor, Cyber Heights, Sector 62, Noida, UP - 201301</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
